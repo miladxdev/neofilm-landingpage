@@ -1,0 +1,136 @@
+$(document).ready(function () {
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    items: 6,
+    autoplay: true,
+    margin: 16,
+  });
+
+  $("#form").on("submit", (e) => {
+    e.preventDefault();
+
+    let searchText = $("#search").val();
+    getMovies(searchText);
+  });
+});
+
+function getMovies(text) {
+  axios
+    .get(`http://www.omdbapi.com/?apikey=ce9c2ac7&s=${text}`)
+    .then((response) => {
+      let movies = response.data.Search;
+      let output = "";
+      console.log(movies);
+      $.each(movies, (index, movie) => {
+        output += `
+          <div class="col-md-2 col-sm-8">
+            <div class="card card-h" onclick="movieSelected('${movie.imdbID}')">
+              <div class="poster">
+                <img src="${movie.Poster}">
+              </div>
+
+              <div class="card-content">
+                <a class="text-light" href="#">${movie.Title}</a>
+                <p></p>
+                
+              </div>
+            </div>
+          </div>`;
+      });
+      $("#movies").html(output);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function movieSelected(id) {
+  sessionStorage.setItem("movieId", id);
+  window.location = "movie.html";
+  return false;
+}
+
+function getMovie() {
+  let movieId = sessionStorage.getItem("movieId");
+
+  axios
+    .get(`http://www.omdbapi.com/?apikey=ce9c2ac7&i=${movieId}`)
+    .then((response) => {
+      console.log(response);
+      let movie = response.data;
+      let output = "";
+      let Genres = "";
+      let Actors = "";
+      let genresArray = movie.Genre.split(",");
+      let actorsArray = movie.Actors.split(",");
+      $("body").css({
+        backgroundImage: `url(${movie.Poster})`,
+      });
+
+      genresArray.map((genre) => (Genres += `<span class="genre">${genre.trim()}</span>`));
+      actorsArray.map((actor) => (Actors += `<a href="#" class="actor text-info">${actor.trim()}</a>`));
+
+      output = `
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <div class="poster">
+                <img src="${movie.Poster} ${movie.year}">
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="item-row">
+                <h1>${movie.Title} ${movie.Year}</h1>
+                <small class="badge bg-secondary">${movie.Runtime}</small>
+                <small class="badge bg-secondary">${movie.Language}</small>
+                <small class="badge bg-secondary">${movie.Rated}</small>
+              </div>
+
+              <div class="item-row">
+                <div class="rating-wrap">
+                  <span class="imdb-rating"><i class="fa fa-star"></i> ${movie.imdbRating}/10<small>${movie.imdbVotes}</small></span>
+                  <div class="meta">
+                    <span class="meta-rating">${movie.Ratings[1].Value}</span>
+                    <small>Metascore</small>
+                  </div> 
+                </div>
+              </div>
+
+              <div class="item-row">
+                <div class="genres-wrap">${Genres}</div>
+              </div>
+              
+              <div class="item-row">
+                <p>${movie.Plot}</p>
+              </div>
+              
+              <div class="item-row">
+                <h4>Director</h4>
+              <a class="text-info" href="#">${movie.Director}</a>
+              </div>
+              
+              <div class="item-row">
+                <h4>Stars</h4>
+                <div>${Actors}</div>
+              </div>
+
+              <div class="item-row">
+                <h4>Awards</h4>
+                <div>${movie.Awards}</div>
+              </div>
+
+              <div class="item-row">
+                <button class="btn btn-warning"><a class="text-dark" href="https://imdb.com/title/${movie.imdbID}">IMDB</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        `;
+
+      $("#movie").html(output);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}

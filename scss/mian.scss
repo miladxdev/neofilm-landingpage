@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+$color-text: #fafafa;
+$color-bg-card: hsl(210, 5%, 10%);
+$color-bg-card-hover: hsl(210, 5%, 15%);
+
+h4 {
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+  transition: opacity 0.1s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: rgb(17, 18, 19);
+  background-image: linear-gradient(180deg, rgba(17, 18, 19, 1), rgba(17, 18, 19, 0.9)), url("../img/main-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $color-text;
+}
+body:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+#form {
+  margin: 0 auto;
+  max-width: 700px;
+}
+.carousel {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+.owl-dots {
+  display: none;
+}
+.owl-nav {
+  display: none;
+}
+
+.card {
+  overflow: hidden;
+  // height: 300px;
+  margin-bottom: 1rem;
+  padding: 8px;
+  background: $color-bg-card;
+  border-radius: 14px;
+  font-family: "@Microsoft Yahei light";
+  transition: background 0.3s;
+  cursor: pointer;
+  &.card-h {
+    // max-height: 200px;
+  }
+  &:hover {
+    background: $color-bg-card-hover;
+  }
+
+  .poster {
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    &.left {
+      margin-bottom: 0;
+    }
+    img {
+      opacity: 0.95;
+    }
+  }
+
+  .card-content {
+    h4 {
+      margin-bottom: 4px;
+      color: $color-text;
+      font-size: 14px;
+    }
+
+    p {
+      color: $color-text;
+      font-size: 12px;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+#form-nav {
+  width: 50%;
+}
+#input-search {
+  width: 100%;
+  max-width: 500px;
+}
+
+.poster {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.item-row {
+  margin-bottom: 1.8rem;
+}
+
+.rating-wrap {
+  display: flex;
+
+  small {
+    font-size: 12px;
+    margin-left: 0.3rem;
+  }
+  .imdb-rating {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    margin-right: 2.4rem;
+    i {
+      margin-right: 8px;
+      color: gold;
+    }
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    .meta-rating {
+      display: flex;
+
+      font-size: 1.3rem;
+      padding: 4px;
+      border-radius: 4px;
+      justify-content: center;
+
+      align-items: center;
+      background: rgb(44, 141, 44);
+    }
+  }
+}
+
+.genres-wrap {
+  // margin: 1rem 0;
+  .genre {
+    padding: 4px 16px;
+    margin-right: 1rem;
+    border: 2px solid #fafafa;
+    border-radius: 16px;
+    transition: background 0.3s;
+    &:hover {
+      background: hsla(0, 0%, 98%, 0.2);
+    }
+  }
+}
+
+.actor {
+  margin-right: 1rem;
+}
