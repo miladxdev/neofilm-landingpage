@@ -1,11 +1,4 @@
 $(document).ready(function () {
-  $(".owl-carousel").owlCarousel({
-    loop: true,
-    items: 6,
-    autoplay: true,
-    margin: 16,
-  });
-
   $("#form").on("submit", (e) => {
     e.preventDefault();
 
@@ -13,6 +6,8 @@ $(document).ready(function () {
     getMovies(searchText);
   });
 });
+
+getMovies("shot");
 
 function getMovies(text) {
   axios
@@ -23,16 +18,13 @@ function getMovies(text) {
       console.log(movies);
       $.each(movies, (index, movie) => {
         output += `
-          <div class="col-md-2 col-sm-8">
+          <div class="col-6 col-md-2">
             <div class="card card-h" onclick="movieSelected('${movie.imdbID}')">
               <div class="poster">
                 <img src="${movie.Poster}">
               </div>
-
               <div class="card-content">
-                <a class="text-light" href="#">${movie.Title}</a>
-                <p></p>
-                
+                <h4>${movie.Title}</h4>
               </div>
             </div>
           </div>`;
@@ -88,9 +80,11 @@ function getMovie() {
 
               <div class="item-row">
                 <div class="rating-wrap">
-                  <span class="imdb-rating"><i class="fa fa-star"></i> ${movie.imdbRating}/10<small>${movie.imdbVotes}</small></span>
+                  <span class="imdb-rating"><i class="fa fa-star">
+                    </i> ${movie.imdbRating}/10<small>${movie.imdbVotes}</small>
+                  </span>
                   <div class="meta">
-                    <span class="meta-rating">${movie.Ratings[1].Value}</span>
+                    <span class="meta-rating">${movie.Ratings[2].Value ?? "XX"}</span>
                     <small>Metascore</small>
                   </div> 
                 </div>

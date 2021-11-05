@@ -12,12 +12,6 @@ h4 {
 
 a {
   text-decoration: none;
-  -webkit-transition: opacity 0.1s;
-  transition: opacity 0.1s;
-}
-
-a:hover {
-  opacity: 0.6;
 }
 
 body {
@@ -99,18 +93,13 @@ img {
 }
 
 .card .card-content h4 {
-  margin-bottom: 4px;
+  overflow: hidden;
   color: #fafafa;
-  font-size: 14px;
-}
-
-.card .card-content p {
-  color: #fafafa;
-  font-size: 12px;
-}
-
-.card .card-content a {
-  text-decoration: none;
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 2.5em;
 }
 
 #form-nav {
