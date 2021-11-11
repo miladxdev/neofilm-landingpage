@@ -12,7 +12,7 @@ getMovies("Terminator");
 function getMovies(text) {
   $("#loader").show();
   axios
-    .get(`http://www.omdbapi.com/?apikey=ce9c2ac7&s=${text}`)
+    .get(`https://www.omdbapi.com/?apikey=ce9c2ac7&s=${text}`)
     .then((response) => {
       $("#loader").hide();
 
@@ -49,7 +49,7 @@ function getMovie() {
   let movieId = sessionStorage.getItem("movieId");
 
   axios
-    .get(`http://www.omdbapi.com/?apikey=ce9c2ac7&i=${movieId}`)
+    .get(`https://www.omdbapi.com/?apikey=ce9c2ac7&i=${movieId}`)
     .then((response) => {
       $("#loader").hide();
 
