@@ -42,22 +42,9 @@ body:before {
   max-width: 700px;
 }
 
-.carousel {
-  border-radius: 30px;
-  overflow: hidden;
-}
-
 img {
   display: block;
   width: 100%;
-}
-
-.owl-dots {
-  display: none;
-}
-
-.owl-nav {
-  display: none;
 }
 
 .card {
@@ -179,6 +166,7 @@ img {
   border-radius: 16px;
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
+  cursor: pointer;
 }
 
 .genres-wrap .genre:hover {
@@ -187,5 +175,41 @@ img {
 
 .actor {
   margin-right: 1rem;
+}
+
+#loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin: auto;
+  border-color: white #ffffff1a #ffffff1a #ffffff1a;
+  -webkit-animation: spin 0.5s infinite;
+          animation: spin 0.5s infinite;
+  opacity: 1;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
 }
 /*# sourceMappingURL=mian.css.map */

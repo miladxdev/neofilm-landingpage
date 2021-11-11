@@ -7,12 +7,15 @@ $(document).ready(function () {
   });
 });
 
-getMovies("shot");
+getMovies("Terminator");
 
 function getMovies(text) {
+  $("#loader").show();
   axios
     .get(`http://www.omdbapi.com/?apikey=ce9c2ac7&s=${text}`)
     .then((response) => {
+      $("#loader").hide();
+
       let movies = response.data.Search;
       let output = "";
       console.log(movies);
@@ -48,6 +51,8 @@ function getMovie() {
   axios
     .get(`http://www.omdbapi.com/?apikey=ce9c2ac7&i=${movieId}`)
     .then((response) => {
+      $("#loader").hide();
+
       console.log(response);
       let movie = response.data;
       let output = "";
@@ -65,16 +70,16 @@ function getMovie() {
       output = `
         <div class="container">
           <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <div class="poster">
                 <img src="${movie.Poster} ${movie.year}">
               </div>
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-8 mt-5 mt-md-0">
               <div class="item-row">
                 <h1>${movie.Title} ${movie.Year}</h1>
                 <small class="badge bg-secondary">${movie.Runtime}</small>
-                <small class="badge bg-secondary">${movie.Language}</small>
+                
                 <small class="badge bg-secondary">${movie.Rated}</small>
               </div>
 
@@ -84,7 +89,7 @@ function getMovie() {
                     </i> ${movie.imdbRating}/10<small>${movie.imdbVotes}</small>
                   </span>
                   <div class="meta">
-                    <span class="meta-rating">${movie.Ratings[2].Value ?? "XX"}</span>
+                    <span class="meta-rating">${movie.Ratings[2] ? movie.Ratings[2].Value : "XX"}</span>
                     <small>Metascore</small>
                   </div> 
                 </div>
