@@ -16,4 +16,83 @@ body:before {
           backdrop-filter: blur(14px);
   z-index: -1;
 }
+
+.item-row {
+  margin-bottom: 1.8rem;
+}
+
+.rating-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.rating-wrap small {
+  font-size: 12px;
+  margin-left: 0.3rem;
+}
+
+.rating-wrap .imdb-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  margin-right: 2.4rem;
+}
+
+.rating-wrap .imdb-rating i {
+  margin-right: 8px;
+  color: gold;
+}
+
+.rating-wrap .meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rating-wrap .meta .meta-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.3rem;
+  padding: 4px;
+  border-radius: 4px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #2c8d2c;
+}
+
+.genres-wrap .genre {
+  display: inline-block;
+  padding: 4px 16px;
+  margin-right: 1rem;
+  border: 2px solid #fafafa;
+  border-radius: 16px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.genres-wrap .genre:hover {
+  background: rgba(250, 250, 250, 0.2);
+}
+
+.actor {
+  margin-right: 1rem;
+}
 /*# sourceMappingURL=movieStyle.css.map */

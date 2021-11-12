@@ -34,6 +34,16 @@ body:before {
   backdrop-filter: blur(2px);
   z-index: -1;
 }
+
+.navbar-brand i {
+  color: gold;
+  font-size: 2rem;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 #form {
   margin: 0 auto;
   max-width: 700px;
@@ -48,7 +58,7 @@ img {
   width: 60px;
   height: 60px;
   font-size: 1.5rem;
-  color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 20%);
 }
 .card {
   overflow: hidden;
@@ -100,63 +110,6 @@ img {
 .poster {
   border-radius: 8px;
   overflow: hidden;
-}
-
-.item-row {
-  margin-bottom: 1.8rem;
-}
-
-.rating-wrap {
-  display: flex;
-
-  small {
-    font-size: 12px;
-    margin-left: 0.3rem;
-  }
-  .imdb-rating {
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-    margin-right: 2.4rem;
-    i {
-      margin-right: 8px;
-      color: gold;
-    }
-  }
-  .meta {
-    display: flex;
-    align-items: center;
-    .meta-rating {
-      display: flex;
-
-      font-size: 1.3rem;
-      padding: 4px;
-      border-radius: 4px;
-      justify-content: center;
-
-      align-items: center;
-      background: rgb(44, 141, 44);
-    }
-  }
-}
-
-.genres-wrap {
-  // margin: 1rem 0;
-  .genre {
-    padding: 4px 16px;
-    margin-right: 1rem;
-    border: 2px solid #fafafa;
-    border-radius: 16px;
-    transition: background 0.3s;
-    cursor: pointer;
-    &:hover {
-      background: hsla(0, 0%, 98%, 0.2);
-    }
-  }
-}
-
-.actor {
-  margin-right: 1rem;
 }
 
 #loader {

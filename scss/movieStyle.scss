@@ -14,3 +14,63 @@ body:before {
   backdrop-filter: blur(14px);
   z-index: -1;
 }
+
+.item-row {
+  margin-bottom: 1.8rem;
+}
+
+.rating-wrap {
+  display: flex;
+
+  small {
+    font-size: 12px;
+    margin-left: 0.3rem;
+  }
+  .imdb-rating {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 2rem;
+    margin-right: 2.4rem;
+    i {
+      margin-right: 8px;
+      color: gold;
+    }
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .meta-rating {
+      display: flex;
+
+      font-size: 1.3rem;
+      padding: 4px;
+      border-radius: 4px;
+      justify-content: center;
+
+      align-items: center;
+      background: rgb(44, 141, 44);
+    }
+  }
+}
+
+.genres-wrap {
+  // margin: 1rem 0;
+  .genre {
+    display: inline-block;
+    padding: 4px 16px;
+    margin-right: 1rem;
+    border: 2px solid #fafafa;
+    border-radius: 16px;
+    transition: background 0.3s;
+    cursor: pointer;
+    &:hover {
+      background: hsla(0, 0%, 98%, 0.2);
+    }
+  }
+}
+
+.actor {
+  margin-right: 1rem;
+}
