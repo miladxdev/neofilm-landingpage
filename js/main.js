@@ -7,7 +7,7 @@ $(document).ready(function () {
   });
 });
 
-getMovies("Terminator");
+getMovies("star wars");
 
 function getMovies(text) {
   $("#loader").show();
@@ -119,7 +119,7 @@ function getMovie() {
               </div>
 
               <div class="item-row">
-                <button class="btn btn-warning"><a class="text-dark" href="https://imdb.com/title/${movie.imdbID}">IMDB</button>
+                <a class="btn btn-warning" href="https://imdb.com/title/${movie.imdbID}">IMDB</a>
               </div>
               
             </div>
