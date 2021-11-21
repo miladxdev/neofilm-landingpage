@@ -1,13 +1,15 @@
 $(document).ready(function () {
   $("#form").on("submit", (e) => {
     e.preventDefault();
-
     let searchText = $("#search").val();
+    localStorage.setItem("lastResult", searchText);
     getMovies(searchText);
   });
 });
 
-getMovies("star wars");
+// load last result after reloading
+lastResult = localStorage.getItem("lastResult");
+getMovies(lastResult ?? "Star Wars");
 
 function getMovies(text) {
   $("#loader").show();
@@ -35,7 +37,12 @@ function getMovies(text) {
       $("#movies").html(output);
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
+      $("#movies").html(`
+        <div class="alert alert-danger" role="alert">
+          Something is wrong! please try again
+        </div>
+      `);
     });
 }
 
