@@ -31,10 +31,9 @@
 
 `screenshot`
 
-![screenshot](./img/Screenshot1.png)
-<br>
-<br>
-![screenshot](./img/Screenshot2.png)
+![screenshot](./img/screenshot-1.png)
+
+![screenshot](./img/screenshot-2.png)
 
 ### [LIVE DEMO ☝](https://miladxdev.github.io/neofilm-landingpage/)
 
@@ -47,8 +46,9 @@ click on any searched result to see all information
 
 - `HTML`
 - `SCSS`
+- `Bootstrap`
 - `jQery`
-- `OMDBapi` [_documentation_](http://www.omdbapi.com/)
+- `OMDB api` [_documentation_](http://www.omdbapi.com/)
 <!-- ROADMAP -->
 
 ## Roadmap
