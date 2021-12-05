@@ -27,6 +27,7 @@ img {
 }
 
 body {
+  position: relative;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   background: #111213;
@@ -67,15 +68,36 @@ body:before {
 }
 
 #form {
+  position: relative;
   margin: 0 auto;
   max-width: 700px;
 }
 
+#form input {
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  background-color: #181a1b;
+  -webkit-transition: background-color 300ms;
+  transition: background-color 300ms;
+  color: lightslategrey;
+}
+
+#form input:focus {
+  background-color: #fafafa;
+  color: #121314;
+}
+
 .search-btn {
-  width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1rem;
   color: #333333;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .card {
@@ -85,7 +107,6 @@ body:before {
   padding: 8px;
   background: #181a1b;
   border-radius: 14px;
-  font-family: "@Microsoft Yahei light", sans-serif;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;

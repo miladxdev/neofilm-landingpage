@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 $color-text: #fafafa;
 $color-bg-card: hsl(210, 5%, 10%);
 $color-bg-card-hover: hsl(210, 5%, 15%);
@@ -26,6 +27,7 @@ img {
 }
 
 body {
+  position: relative;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   background: rgb(17, 18, 19);
@@ -60,15 +62,32 @@ body:before {
 }
 
 #form {
+  position: relative;
   margin: 0 auto;
   max-width: 700px;
+  input {
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    background-color: $color-bg-card;
+    transition: background-color 300ms;
+    color: lightslategrey;
+    &:focus {
+      background-color: #fafafa;
+      color: #121314;
+    }
+  }
 }
 
 .search-btn {
-  width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1rem;
   color: hsl(0, 0%, 20%);
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .card {
   position: relative;
@@ -77,7 +96,7 @@ body:before {
   padding: 8px;
   background: $color-bg-card;
   border-radius: 14px;
-  font-family: "@Microsoft Yahei light", sans-serif;
+  // font-family: "@Microsoft Yahei light", sans-serif;
   transition: 0.3s;
   cursor: pointer;
   &:hover {

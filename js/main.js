@@ -137,7 +137,7 @@ function getMovie() {
               </div>
 
               <div class="item-row">
-                <a class="btn btn-warning" href="https://imdb.com/title/${movie.imdbID}">IMDB</a>
+                <a class="btn btn-warning" target="black" href="https://imdb.com/title/${movie.imdbID}">IMDB</a>
               </div>
               
             </div>
