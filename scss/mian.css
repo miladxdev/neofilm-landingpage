@@ -15,7 +15,15 @@ a {
 }
 
 img {
+  display: block;
+  width: 100%;
   -webkit-user-drag: none;
+}
+
+.poster img {
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  transition: opacity 500ms;
 }
 
 body {
@@ -63,11 +71,6 @@ body:before {
   max-width: 700px;
 }
 
-img {
-  display: block;
-  width: 100%;
-}
-
 .search-btn {
   width: 60px;
   height: 60px;
@@ -76,12 +79,13 @@ img {
 }
 
 .card {
+  position: relative;
   overflow: hidden;
   margin-bottom: 1rem;
   padding: 8px;
   background: #181a1b;
   border-radius: 14px;
-  font-family: "@Microsoft Yahei light";
+  font-family: "@Microsoft Yahei light", sans-serif;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
@@ -104,12 +108,12 @@ img {
   margin-bottom: 8px;
 }
 
-.card .poster.left {
-  margin-bottom: 0;
+.card .poster img {
+  aspect-ratio: 3/4.5;
 }
 
-.card .poster img {
-  opacity: 0.95;
+.card .poster.left {
+  margin-bottom: 0;
 }
 
 .card .card-content h4 {
@@ -131,11 +135,6 @@ img {
   max-width: 500px;
 }
 
-.poster {
-  border-radius: 8px;
-  overflow: hidden;
-}
-
 #loader {
   width: 50px;
   height: 50px;
@@ -148,6 +147,12 @@ img {
   -webkit-animation: spin 0.5s infinite;
           animation: spin 0.5s infinite;
   opacity: 1;
+}
+
+#loader.center {
+  position: absolute;
+  top: 35%;
+  right: 35%;
 }
 
 @-webkit-keyframes spin {
@@ -169,5 +174,40 @@ img {
   to {
     -webkit-transform: rotate(359deg);
             transform: rotate(359deg);
+  }
+}
+
+/* sleleton elements */
+.skeleton {
+  background: -webkit-gradient(linear, left top, right top, from(#181a1b), color-stop(#222425), to(#181a1b));
+  background: linear-gradient(90deg, #181a1b, #222425, #181a1b);
+  background-size: 200%;
+  animation: loader 1s infinite reverse;
+}
+
+.card-content.skeleton {
+  width: 80%;
+  border-radius: 8px;
+}
+
+.card-content.skeleton h4 {
+  color: transparent;
+}
+
+/* skeleton animation */
+@-webkit-keyframes loader {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+@keyframes loader {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 100% 0;
   }
 }

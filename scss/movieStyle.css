@@ -17,6 +17,13 @@ body:before {
   z-index: -1;
 }
 
+.poster {
+  position: relative;
+  border-radius: 1rem;
+  margin-right: 4rem;
+  overflow: hidden;
+}
+
 .item-row {
   margin-bottom: 1.8rem;
 }

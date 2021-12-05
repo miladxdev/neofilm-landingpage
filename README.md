@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/miladxdev/neofilm-landingpage">
-    <img src="img/logo.png" alt="Logo" width="120">
+    <img src="img/logo.png" alt="Logo" width="64">
 
   </a>
 
