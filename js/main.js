@@ -5,17 +5,46 @@ $(document).ready(function () {
     e.preventDefault();
     let searchText = $("#search").val();
     localStorage.setItem("lastResult", searchText);
+    page = 1;
+    $("#page-number").html(page);
     getMovies(searchText, page);
   });
-});
 
-// load THE last result after reloading
-lastResult = localStorage.getItem("lastResult");
-getMovies(lastResult ?? "Star Wars", page);
+  $("#next").click(() => {
+    page++;
+    let searchText = $("#search").val();
+
+    getMovies(searchText, page);
+
+    $("#page-number").html(page);
+    if (page != 1) {
+      $("#prev").removeClass("disabled");
+    }
+  });
+
+  $("#prev").click(() => {
+    if (page > 1) {
+      page--;
+      $("#page-number").html(page);
+      let searchText = $("#search").val();
+
+      getMovies(searchText, page);
+    }
+
+    if ((page = 1)) {
+      $("#prev").addClass("disabled");
+    }
+  });
+
+  // load THE last result after reloading
+  lastResult = localStorage.getItem("lastResult");
+  $("#search").val(lastResult);
+  getMovies(lastResult ?? "Star Wars", page);
+});
 
 function getMovies(text, page) {
   $("#loader").show();
-
+  console.log(page);
   axios
     .get(`https://www.omdbapi.com/?apikey=ce9c2ac7&s=${text}&page=${page}`)
     .then((response) => {
@@ -42,6 +71,19 @@ function getMovies(text, page) {
 
       $("img").on("load", function () {
         $(this).css({ opacity: 0.95 });
+        $(this).parents(".card .card-content").css({ color: "white" });
+        // remove all skeleton classes when the image loads
+        $(this).parents(".card").children(".skeleton").removeClass("skeleton");
+      });
+
+      $("img").on("error", function () {
+        $(this).parents(".card").children(".poster").css({
+          backgroundImage: `url(../img/no-image.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          animation: "none",
+        });
+
         $(this).parents(".card .card-content").css({ color: "white" });
         // remove all skeleton classes when the image loads
         $(this).parents(".card").children(".skeleton").removeClass("skeleton");
@@ -90,7 +132,7 @@ function getMovie() {
         <div class="container">
           <div class="row">
             <div class="col-12 col-md-4">
-              <div class="poster">
+              <div class="poster p-0">
                 <div id="loader"></div>
                 <img src="${movie.Poster}">
               </div>

@@ -21,8 +21,11 @@ body:before {
 .poster {
   position: relative;
   border-radius: 1rem;
-  margin-right: 4rem;
   overflow: hidden;
+}
+
+.poster img {
+  width: 100%;
 }
 
 .item-row {
@@ -89,6 +92,7 @@ body:before {
   display: inline-block;
   padding: 4px 16px;
   margin-right: 1rem;
+  margin-bottom: 1rem;
   border: 2px solid #fafafa;
   border-radius: 16px;
   -webkit-transition: background 0.3s;

@@ -41,37 +41,37 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="./index.html"><img src="img/logo.png" alt="logo" /></a>
           <button
             class="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Movies</a>
-              </li>
+          <a class="navbar-brand" href="./index.html"><img src="img/logo.png" alt="logo" /></a>
 
-              <li class="nav-item">
-                <a class="nav-link">TV shows</a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Movies <span class="sr-only">(current)</span></a>
               </li>
-
               <li class="nav-item">
-                <a class="nav-link">Celebs</a>
+                <a class="nav-link" href="#">TV</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Celebs</a>
               </li>
             </ul>
-
-            <button href="#" class="btn btn-outline-info mr-2 ml-auto">Sign in</button>
-            <button class="btn btn-info"><i class="far fa-bookmark"></i> Watch list</button>
+            <div class="my-2 my-lg-0">
+              <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Sign in</button>
+              <button class="btn btn-info ml-2 my-sm-0" type="submit"><i class="far fa-bookmark"></i> Watch list</button>
+            </div>
           </div>
         </div>
       </nav>
