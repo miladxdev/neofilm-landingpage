@@ -13,8 +13,8 @@ body:before {
   height: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#111213), to(rgba(17, 18, 19, 0.8)));
   background-image: linear-gradient(to bottom, #111213, rgba(17, 18, 19, 0.8));
-  -webkit-backdrop-filter: blur(14px);
-          backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   z-index: -1;
 }
 

@@ -1,21 +1,23 @@
+let page = 1;
+
 $(document).ready(function () {
   $("#form").on("submit", (e) => {
     e.preventDefault();
     let searchText = $("#search").val();
     localStorage.setItem("lastResult", searchText);
-    getMovies(searchText);
+    getMovies(searchText, page);
   });
 });
 
-// load last result after reloading
+// load THE last result after reloading
 lastResult = localStorage.getItem("lastResult");
-getMovies(lastResult ?? "Star Wars");
+getMovies(lastResult ?? "Star Wars", page);
 
-function getMovies(text) {
+function getMovies(text, page) {
   $("#loader").show();
 
   axios
-    .get(`https://www.omdbapi.com/?apikey=ce9c2ac7&s=${text}`)
+    .get(`https://www.omdbapi.com/?apikey=ce9c2ac7&s=${text}&page=${page}`)
     .then((response) => {
       $("#loader").hide();
 

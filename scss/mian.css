@@ -31,8 +31,8 @@ body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   background: #111213;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#111213), to(rgba(17, 18, 19, 0.9))), url("../img/main-bg.jpg");
-  background-image: linear-gradient(180deg, #111213, rgba(17, 18, 19, 0.9)), url("../img/main-bg.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#111213), to(rgba(17, 18, 19, 0.9)));
+  background-image: linear-gradient(180deg, #111213, rgba(17, 18, 19, 0.9));
   background-size: cover;
   background-repeat: no-repeat;
   color: #fafafa;
@@ -75,6 +75,7 @@ body:before {
 
 #form input {
   font-size: 1.2rem;
+  padding: 1.8rem;
   border-radius: 0.5rem;
   background-color: #181a1b;
   -webkit-transition: background-color 300ms;
@@ -88,8 +89,8 @@ body:before {
 }
 
 .search-btn {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   font-size: 1rem;
   color: #333333;
