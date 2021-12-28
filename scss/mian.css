@@ -50,8 +50,8 @@ body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   background: #111213;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#111213), to(rgba(17, 18, 19, 0.9)));
-  background-image: linear-gradient(180deg, #111213, rgba(17, 18, 19, 0.9));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#111213), to(rgba(17, 18, 19, 0.9))), url("../img/main-bg.jpg");
+  background-image: linear-gradient(180deg, #111213, rgba(17, 18, 19, 0.9)), url("../img/main-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: #fafafa;
