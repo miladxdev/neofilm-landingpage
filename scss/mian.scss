@@ -121,6 +121,13 @@ body:before {
   &:active {
     transform: scale(0.98);
   }
+  .movie-type {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.9rem;
+    z-index: 1;
+  }
   .poster {
     overflow: hidden;
     object-fit: cover;

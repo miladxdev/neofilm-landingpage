@@ -141,6 +141,14 @@ body:before {
           transform: scale(0.98);
 }
 
+.card .movie-type {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.9rem;
+  z-index: 1;
+}
+
 .card .poster {
   overflow: hidden;
   -o-object-fit: cover;

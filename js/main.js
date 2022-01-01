@@ -52,11 +52,21 @@ function getMovies(text, page) {
 
       let movies = response.data.Search;
       let output = "";
+      let badgeClass;
       console.log(movies);
       $.each(movies, (index, movie) => {
+        if (movie.Type === "movie") {
+          badgeClass = "warning";
+        } else if (movie.Type === "series") {
+          badgeClass = "primary";
+        } else {
+          badgeClass = "danger";
+        }
+
         output += `
           <div class="col-6 col-lg-2 col-md-3">
-            <div class="card" onclick="movieSelected('${movie.imdbID}', this)">
+          <div class="card" onclick="movieSelected('${movie.imdbID}', this)">
+            <span class="badge badge-${badgeClass} movie-type">${movie.Type}</span>
               <div class="poster skeleton">
                 <img src="${movie.Poster}">
               </div>
@@ -105,6 +115,8 @@ function movieSelected(id, elem) {
   window.location = "movie.html";
   return false;
 }
+
+// --- Movie page ---
 
 function getMovie() {
   let movieId = sessionStorage.getItem("movieId");
