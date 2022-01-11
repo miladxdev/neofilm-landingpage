@@ -46,8 +46,9 @@ click on any searched result to see all information
 
 - `HTML`
 - `SCSS`
-- `Bootstrap`
-- `jQery`
+- `Bootstrap 4`
+- `jQuery`
+- `axios` CDN
 - `OMDB api` [_documentation_](http://www.omdbapi.com/)
 <!-- ROADMAP -->
 
