@@ -11,10 +11,10 @@ body:before {
   right: 0;
   left: 0;
   height: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#111213), to(rgba(17, 18, 19, 0.8)));
-  background-image: linear-gradient(to bottom, #111213, rgba(17, 18, 19, 0.8));
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 18, 19, 0.98)), to(rgba(17, 18, 19, 0.8)));
+  background-image: linear-gradient(to bottom, rgba(17, 18, 19, 0.98), rgba(17, 18, 19, 0.8));
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
   z-index: -1;
 }
 

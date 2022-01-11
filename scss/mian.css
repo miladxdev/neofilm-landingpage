@@ -26,9 +26,9 @@ img {
 }
 
 nav {
-  background-color: rgba(17, 18, 19, 0.8);
+  background-color: rgba(255, 255, 255, 0.02);
   color: red;
-  border-bottom: 1px solid #00ccb1;
+  border-bottom: 1px solid #006658;
 }
 
 nav .navbar-brand {
@@ -50,8 +50,8 @@ body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   background: #111213;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#111213), to(rgba(17, 18, 19, 0.9))), url("../img/main-bg.jpg");
-  background-image: linear-gradient(180deg, #111213, rgba(17, 18, 19, 0.9)), url("../img/main-bg.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 18, 19, 0.98)), to(rgba(17, 18, 19, 0.9))), url("../img/main-bg.jpg");
+  background-image: linear-gradient(180deg, rgba(17, 18, 19, 0.98), rgba(17, 18, 19, 0.9)), url("../img/main-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: #fafafa;
