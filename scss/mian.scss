@@ -7,8 +7,8 @@
 }
 
 $color-text: #fafafa;
-$color-bg-card: hsl(210, 5%, 10%);
-$color-bg-card-hover: hsl(210, 5%, 15%);
+$color-bg-card: hsl(210, 5%, 14%);
+$color-bg-card-hover: hsl(210, 5%, 19%);
 
 h4 {
   font-size: 18px;
@@ -27,7 +27,7 @@ img {
 }
 
 nav {
-  background-color: #121314;
+  background-color: hsla(210, 5%, 7%, 0.8);
   color: red;
   border-bottom: 1px solid hsl(172, 100%, 40%);
   .navbar-brand {
@@ -83,25 +83,28 @@ body:before {
   input {
     font-size: 1.2rem;
     padding: 1.8rem;
-    border-radius: 0.5rem;
-    background-color: $color-bg-card;
+    border-radius: 1rem;
+    background-color: lighten($color-bg-card, 2);
     transition: background-color 300ms;
     color: lightslategrey;
     &:focus {
-      background-color: #fafafa;
-      color: #121314;
+      background-color: lighten($color-bg-card, 5);
     }
   }
 }
 
+.form-control {
+  border: none;
+}
+
 .search-btn {
-  width: 40px;
+  width: 80px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 1rem;
   font-size: 1rem;
-  color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 10%);
   position: absolute;
-  right: 1.5rem;
+  right: 0.6rem;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -112,7 +115,6 @@ body:before {
   padding: 8px;
   background: $color-bg-card;
   border-radius: 14px;
-  // font-family: "@Microsoft Yahei light", sans-serif;
   transition: 0.1s;
   cursor: pointer;
   &:hover {
@@ -160,7 +162,7 @@ body:before {
 }
 #input-search {
   width: 100%;
-  max-width: 500px;
+  // max-width: 500px;
 }
 
 #loader {
@@ -204,6 +206,7 @@ body:before {
   width: 80%;
   border-radius: 8px;
 }
+
 /* skeleton animation */
 @keyframes loader {
   from {

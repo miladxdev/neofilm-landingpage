@@ -26,7 +26,7 @@ img {
 }
 
 nav {
-  background-color: #121314;
+  background-color: rgba(17, 18, 19, 0.8);
   color: red;
   border-bottom: 1px solid #00ccb1;
 }
@@ -95,26 +95,29 @@ body:before {
 #form input {
   font-size: 1.2rem;
   padding: 1.8rem;
-  border-radius: 0.5rem;
-  background-color: #181a1b;
+  border-radius: 1rem;
+  background-color: #27292b;
   -webkit-transition: background-color 300ms;
   transition: background-color 300ms;
   color: lightslategrey;
 }
 
 #form input:focus {
-  background-color: #fafafa;
-  color: #121314;
+  background-color: #2e3033;
+}
+
+.form-control {
+  border: none;
 }
 
 .search-btn {
-  width: 40px;
+  width: 80px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 1rem;
   font-size: 1rem;
-  color: #333333;
+  color: #1a1a1a;
   position: absolute;
-  right: 1.5rem;
+  right: 0.6rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -125,7 +128,7 @@ body:before {
   overflow: hidden;
   margin-bottom: 1rem;
   padding: 8px;
-  background: #181a1b;
+  background: #222425;
   border-radius: 14px;
   -webkit-transition: 0.1s;
   transition: 0.1s;
@@ -133,7 +136,7 @@ body:before {
 }
 
 .card:hover {
-  background: #242628;
+  background: #2e3033;
 }
 
 .card:active {
@@ -182,7 +185,6 @@ body:before {
 
 #input-search {
   width: 100%;
-  max-width: 500px;
 }
 
 #loader {
